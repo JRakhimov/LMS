@@ -1,3 +1,5 @@
+package core.models;
+
 public class Book {
     private int ISBN;
     private int title;
@@ -6,8 +8,8 @@ public class Book {
     private int publishDate;
 
     private int expiresAt;
-//    private Student borrower;
-//    private Student reservedBy;
+    private Student borrower;
+    private Student reservedBy;
 
     Book(int isbn, int title, String author, String subject, int publishDate, int expiresAt) {
         this.ISBN = isbn;

@@ -1,17 +1,7 @@
+package core.models;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
-
-enum Course {
-    FRESHMAN,
-    SOPHOMORE,
-    JUNIOR,
-    SENIOR
-}
-
-enum Department {
-    SOCIE,
-    SOL
-}
 
 public class Student {
     private String login;
@@ -56,5 +46,7 @@ public class Student {
             case 2: return Course.JUNIOR;
             case 3: return Course.SENIOR;
         }
+
+        return Course.NOT_FOUND;
     }
 }

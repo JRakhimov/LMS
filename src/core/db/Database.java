@@ -9,8 +9,27 @@ public class Database {
     private String dbEndpoint;
     private String password;
     private String user;
-    private Statement statement = null;
-    private Connection connection = null;
+    public Statement statement = null;
+    public Connection connection = null;
+
+    private void connectToDB() {
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+
+            Properties auth = new Properties();
+            auth.put("password", this.password);
+            auth.put("user", this.user);
+
+            this.connection = DriverManager.getConnection(this.dbEndpoint, auth);
+
+            System.out.println("Connected to: " + this.dbEndpoint);
+        } catch (SQLException e) {
+            printSQLException(e);
+        } catch (ClassNotFoundException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+    }
 
     protected Database(String dbEndpoint, String user, String password) {
         this.dbEndpoint = dbEndpoint;
@@ -34,25 +53,6 @@ public class Database {
         }
 
         return instance;
-    }
-
-    private void connectToDB() {
-        try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-
-            Properties auth = new Properties();
-            auth.put("password", this.password);
-            auth.put("user", this.user);
-
-            this.connection = DriverManager.getConnection(this.dbEndpoint, auth);
-
-            System.out.println("Connected to: " + this.dbEndpoint);
-        } catch (SQLException e) {
-            printSQLException(e);
-        } catch (ClassNotFoundException e) {
-            System.out.println(e);
-            e.printStackTrace();
-        }
     }
 
     public static void printSQLException(SQLException e) {

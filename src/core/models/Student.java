@@ -21,7 +21,7 @@ public class Student {
     private boolean isBlocked = false;
     private Roles role = Roles.STUDENT;
 
-    Student(String login, String password) {
+    public Student(String login, String password) {
         this.login = login;
         this.password = password;
 

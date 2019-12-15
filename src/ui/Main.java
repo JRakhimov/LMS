@@ -1,6 +1,7 @@
 package ui;
 
 import core.db.Database;
+import core.db.StudentDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,6 +22,12 @@ public class Main extends Application {
     public static void main(String[] args) {
         Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
         Database db = Database.getInstance();
+
+        StudentDB sdb = new StudentDB();
+
+//        sdb.initStudentsTable();
+//        sdb.createStudent("U1810265", "19980622");
+        sdb.printStudents();
 
         launch(args);
     }

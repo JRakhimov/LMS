@@ -1,5 +1,6 @@
 package ui;
 
+import core.db.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +19,9 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
+        Database db = Database.getInstance();
+
         launch(args);
     }
 }

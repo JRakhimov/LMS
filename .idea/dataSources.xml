@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL - lms@localhost" uuid="98e03bc8-d1b8-4a00-b3b3-65134d3db011">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="Apache Derby LMS" uuid="8203c55b-4440-43fd-b291-26b7ab007628">
+      <driver-ref>derby.remote</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/lms</jdbc-url>
-      <driver-properties>
-        <property name="autoReconnect" value="true" />
-        <property name="zeroDateTimeBehavior" value="CONVERT_TO_NULL" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
-        <property name="yearIsDateType" value="false" />
-        <property name="serverTimezone" value="UTC" />
-      </driver-properties>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:3303/LMS;create=true</jdbc-url>
     </data-source>
   </component>
 </project>

@@ -1,5 +1,6 @@
 package core.models;
 
+import core.enums.Course;
 import core.enums.Department;
 import core.enums.Roles;
 

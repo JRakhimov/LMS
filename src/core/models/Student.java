@@ -1,17 +1,24 @@
 package core.models;
 
+import core.enums.Department;
+import core.enums.Roles;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
 
 public class Student {
     private String login;
     private String password;
+
     private Course course;
     private Department department;
+
     private Book[] books;
     private Book[] reservedBooks;
-    private double fine;
-    private boolean isBlocked;
+
+    private double fine = 0;
+    private boolean isBlocked = false;
+    private Roles role = Roles.STUDENT;
 
     Student(String login, String password) {
         this.login = login;

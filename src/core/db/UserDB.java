@@ -5,12 +5,31 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class StudentDB {
-    public void createStudent(String login, String password) {
+public class UserDB {
+    public void initUsersTable() {
         Database db = Database.getInstance();
 
         try {
-            PreparedStatement psInsert = db.connection.prepareStatement("insert into students values (?, ?)");
+            Statement st = db.connection.createStatement();
+            String sql =
+                    "CREATE TABLE user(id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), login VARCHAR(20) NOT NULL, password VARCHAR(20) NOT NULL, PRIMARY KEY (id, login))";
+
+            st.execute(sql);
+            st.close();
+        } catch (SQLException e) {
+            if (Database.tableAlreadyExists(e)) {
+                return;
+            }
+
+            Database.printSQLException(e);
+        }
+    }
+
+    public void createUser(String login, String password) {
+        Database db = Database.getInstance();
+
+        try {
+            PreparedStatement psInsert = db.connection.prepareStatement("insert into user values (?, ?)");
             psInsert.setString(1, login);
             psInsert.setString(2, password);
             psInsert.executeUpdate();
@@ -21,12 +40,12 @@ public class StudentDB {
         }
     }
 
-    public void printStudents() {
+    public void printUsers() {
         Database db = Database.getInstance();
 
         try {
             Statement st = db.connection.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM students");
+            ResultSet rs = st.executeQuery("SELECT * FROM users");
 
             if (rs.next()) {
                 String login = rs.getString("login");

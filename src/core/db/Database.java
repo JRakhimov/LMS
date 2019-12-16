@@ -66,4 +66,8 @@ public class Database {
             e = e.getNextException();
         }
     }
+
+    public static boolean tableAlreadyExists(SQLException e) {
+        return e.getSQLState().equals("X0Y32");
+    }
 }

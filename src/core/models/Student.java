@@ -7,10 +7,7 @@ import core.enums.Roles;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
-public class Student {
-    private String login;
-    private String password;
-
+public class Student extends User {
     private Course course;
     private Department department;
 

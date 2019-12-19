@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #171C28;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #32323D;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #131821;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox prefHeight="1080.0" prefWidth="300.0" style="-fx-background-color: #262730;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
-            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #131821;" text="Button" textFill="WHITE">
+            <ImageView fitHeight="207.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #262730;" text="Books" textFill="#03a5a5">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -24,13 +24,16 @@
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets />
+                  <Insets bottom="15.0" left="-10.0" />
                </VBox.margin>
                <padding>
                   <Insets left="65.0" />
                </padding>
+               <font>
+                  <Font name="Montserrat Medium" size="16.0" />
+               </font>
             </Button>
-            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #131821;" text="Librarians" textFill="WHITE">
+            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #262730;" text="Librarians" textFill="#03a5a5">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -39,13 +42,16 @@
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets />
+                  <Insets bottom="15.0" left="-10.0" />
                </VBox.margin>
                <padding>
                   <Insets left="65.0" />
                </padding>
+               <font>
+                  <Font name="Montserrat Medium" size="15.0" />
+               </font>
             </Button>
-            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #131821;" text="Students" textFill="WHITE">
+            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="277.0" style="-fx-background-color: #262730;" text="Students" textFill="#03a5a5">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -54,92 +60,103 @@
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets />
+                  <Insets bottom="15.0" left="-10.0" />
                </VBox.margin>
                <padding>
                   <Insets left="65.0" />
                </padding>
+               <font>
+                  <Font name="Montserrat Medium" size="16.0" />
+               </font>
+            </Button>
+            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="301.0" style="-fx-background-color: #262730;" text="Borrowed books" textFill="#03a5a5">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/baseline_school_white_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+               <font>
+                  <Font name="Montserrat Medium" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="-10.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="276.0" style="-fx-background-color: #262730;" text="Overdue books" textFill="#03a5a5">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/baseline_school_white_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+               <font>
+                  <Font name="Montserrat Medium" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="-10.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="301.0" style="-fx-background-color: #262730;" text="Report" textFill="#03a5a5">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/baseline_school_white_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+               <font>
+                  <Font name="Montserrat Medium" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="-10.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="299.0" style="-fx-background-color: #262730;" text="Log out" textFill="#03a5a5">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/baseline_school_white_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+               <font>
+                  <Font name="Montserrat Medium" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="-10.0" />
+               </VBox.margin>
             </Button>
          </children>
       </VBox>
-      <Label layoutX="283.0" layoutY="30.0" text="Students" textFill="WHITE">
-         <font>
-            <Font name="Montserrat SemiBold" size="25.0" />
-         </font>
-      </Label>
-      <HBox alignment="CENTER_LEFT" layoutX="273.0" layoutY="77.0" prefHeight="85.0" prefWidth="603.0" style="-fx-background-color: #131821;" AnchorPane.leftAnchor="273.0" AnchorPane.rightAnchor="24.0">
+      <VBox fx:id="pnItems" layoutX="322.0" layoutY="239.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #262730; -fx-background-radius: 10;" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="31.0" />
+      <HBox alignment="CENTER_LEFT" layoutX="322.0" layoutY="182.0" prefHeight="46.0" prefWidth="1507.0" style="-fx-background-color: #262730; -fx-background-radius: 10;" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="31.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <Label text="3000" textFill="WHITE">
-                     <font>
-                        <Font name="Montserrat SemiBold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label text="books" textFill="WHITE">
-                     <font>
-                        <Font name="Montserrat SemiBold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets left="30.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <Label text="12" textFill="WHITE">
-                     <font>
-                        <Font name="Montserrat SemiBold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label text="librarians" textFill="WHITE">
-                     <font>
-                        <Font name="Montserrat SemiBold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets left="30.0" />
-               </padding>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <Label text="300" textFill="WHITE">
-                     <font>
-                        <Font name="Montserrat SemiBold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label text="Students" textFill="WHITE">
-                     <font>
-                        <Font name="Montserrat SemiBold" size="12.0" />
-                     </font>
-                  </Label>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets left="30.0" />
-               </padding>
-            </VBox>
-         </children>
-         <padding>
-            <Insets left="80.0" />
-         </padding>
-      </HBox>
-      <VBox layoutX="273.0" layoutY="235.0" prefHeight="450.0" prefWidth="603.0" style="-fx-background-color: #131821;" AnchorPane.leftAnchor="273.0" AnchorPane.rightAnchor="24.0" />
-      <HBox alignment="CENTER_LEFT" layoutX="275.0" layoutY="175.0" prefHeight="46.0" prefWidth="603.0" style="-fx-background-color: #131821;" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="22.0">
-         <children>
+            <Label text="№" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat SemiBold" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </Label>
             <Label text="Name" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="60.0" />
+                  <Insets left="25.0" />
                </HBox.margin>
                <font>
                   <Font name="Montserrat SemiBold" size="12.0" />
@@ -147,7 +164,7 @@
             </Label>
             <Label text="Student ID" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="60.0" />
+                  <Insets left="130.0" />
                </HBox.margin>
                <font>
                   <Font name="Montserrat SemiBold" size="12.0" />
@@ -155,7 +172,7 @@
             </Label>
             <Label text="Mail" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="60.0" />
+                  <Insets left="65.0" />
                </HBox.margin>
                <font>
                   <Font name="Montserrat SemiBold" size="12.0" />
@@ -163,12 +180,58 @@
             </Label>
             <Label text="Stage" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="60.0" />
+                  <Insets left="115.0" />
                </HBox.margin>
                <font>
                   <Font name="Montserrat SemiBold" size="12.0" />
                </font>
             </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="322.0" layoutY="82.0" prefHeight="78.0" prefWidth="1507.0" spacing="30.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="64.0" prefWidth="128.0" style="-fx-background-color: #03A5A5; -fx-background-radius: 10;">
+               <children>
+                  <Label text="456" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label text="books" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Medium" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="70.0" prefWidth="128.0" style="-fx-background-color: #03A5A5; -fx-background-radius: 10;">
+               <children>
+                  <Label text="24" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label text="librarians" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Medium" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="70.0" prefWidth="128.0" style="-fx-background-color: #03A5A5; -fx-background-radius: 10;">
+               <children>
+                  <Label text="340" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label text="students" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Medium" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
          </children>
       </HBox>
    </children>

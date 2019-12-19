@@ -1,8 +1,5 @@
 package ui;
 
-import core.db.Database;
-import core.db.StudentDB;
-import core.db.UserDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("views/sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("views/login.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
@@ -21,15 +18,15 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
-        Database db = Database.getInstance();
+//        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
+//        Database db = Database.getInstance();
 
-        UserDB udb = new UserDB();
+//        UserDB udb = new UserDB();
 
-        udb.initUsersTable();
+//        udb.initUsersTable();
 //        udb.createUser("U1810265", "19980622");
 //        udb.printUsers();
 
-        launch(args);
+       launch(args);
     }
 }

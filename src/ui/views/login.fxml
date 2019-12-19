@@ -62,7 +62,7 @@
             </Button>
          </children>
       </VBox>
-      <Label layoutX="283.0" layoutY="30.0" text="Students" textFill="WHITE">
+      <Label layoutX="283.0" layoutY="30.0" text="Student" textFill="WHITE">
          <font>
             <Font name="Montserrat SemiBold" size="25.0" />
          </font>
@@ -141,9 +141,6 @@
                <HBox.margin>
                   <Insets left="60.0" />
                </HBox.margin>
-               <font>
-                  <Font name="Montserrat SemiBold" size="12.0" />
-               </font>
             </Label>
             <Label text="Student ID" textFill="WHITE">
                <HBox.margin>

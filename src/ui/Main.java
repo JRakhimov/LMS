@@ -1,5 +1,8 @@
 package ui;
 
+import core.db.Database;
+import core.db.Users;
+import core.enums.Roles;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,14 +21,17 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-//        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
-//        Database db = Database.getInstance();
+        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
+        Database db = Database.getInstance();
 
-//        UserDB udb = new UserDB();
+        Users udb = new Users();
 
-//        udb.initUsersTable();
-//        udb.createUser("U1810265", "19980622");
-//        udb.printUsers();
+//        Roles.initRolesTable();
+//        Users.initUsersTable();
+
+//        udb.createUser("U1810264", "123abc123", core.enums.Roles.STUDENT);
+//        udb.deleteUser("u1810265");
+        udb.fetchUsers(Roles.STUDENT);
 
        launch(args);
     }

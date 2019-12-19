@@ -54,4 +54,9 @@ public class Student extends User {
 
         return Course.NOT_FOUND;
     }
+
+    @Override
+    public String toString() {
+        return "Login: " + this.login;
+    }
 }

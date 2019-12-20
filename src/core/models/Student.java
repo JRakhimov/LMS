@@ -57,6 +57,6 @@ public class Student extends User {
 
     @Override
     public String toString() {
-        return "Login: " + this.login;
+        return "Login: " + this.login + "\nRole: " + this.role;
     }
 }

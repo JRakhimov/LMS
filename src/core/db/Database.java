@@ -9,7 +9,6 @@ public class Database {
     private String dbEndpoint;
     private String password;
     private String user;
-    public Statement statement = null;
     public Connection connection = null;
 
     private void connectToDB() {
@@ -61,8 +60,8 @@ public class Database {
             System.err.println("  SQL State:  " + e.getSQLState());
             System.err.println("  Error Code: " + e.getErrorCode());
             System.err.println("  Message:    " + e.getMessage());
-            // for stack traces, refer to derby.log or uncomment this:
-            //e.printStackTrace(System.err);
+
+            e.printStackTrace(System.err);
             e = e.getNextException();
         }
     }

@@ -8,7 +8,5 @@ public class User {
     public Roles role;
 
     @Override
-    public String toString() {
-        return "Login: " + this.login;
-    }
+    public String toString() { return "Login: " + this.login; }
 }

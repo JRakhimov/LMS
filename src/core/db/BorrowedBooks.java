@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class BorrowedBooks {
-    public void createBorrowedBooks(int ISBN,String ID) {
+    public void createBorrowedBooks(int ISBN, String ID) {
         Database db = Database.getInstance();
 
         try {

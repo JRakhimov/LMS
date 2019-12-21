@@ -40,7 +40,8 @@ public class Books {
         Database db = Database.getInstance();
         int id = -1;
 
-        PreparedStatement psInsert = db.connection.prepareStatement("INSERT INTO BOOKS(ISBN, Title, Author, PublishDate, SUBJECT) VALUES (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+        String sql = "INSERT INTO BOOKS(ISBN, Title, Author, PublishDate, SUBJECT) VALUES (?, ?, ?, ?, ?)";
+        PreparedStatement psInsert = db.connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
         psInsert.setInt(1, isbn);
         psInsert.setString(2, title);
         psInsert.setString(3, author);
@@ -62,7 +63,6 @@ public class Books {
         }
 
         System.out.println("Inserted: " + title);
-
 
         return new Book(id, isbn, title, author, subject, publishDate);
     }

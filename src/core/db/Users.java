@@ -9,19 +9,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-
-/*
-CREATE TABLE BorrowedBooks
-(
-id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
-studentID VARCHAR(50) NOT NULL,
-bookID VARCHAR(50) NOT NULL,
-PRIMARY KEY (id),
-FOREIGN KEY (studentID) REFERENCES Users
-FOREIGN KEY (bookID) REFERENCES Books
-);
-* */
 
 public class Users {
     public static void initUsersTable() {
@@ -91,134 +78,194 @@ public class Users {
         }
     }
 
-    public void createUser(String login, String password, core.enums.Roles role) {
+    public User createUser(String login, String password, core.enums.Roles role) throws SQLException {
         Database db = Database.getInstance();
+        int roleInt = this.getRoleInt(role);
+        int id = -1;
 
-        try {
-            int roleInt = this.getRoleInt(role);
+        String sql = "INSERT INTO USERS(login, password, role, fine) VALUES (?, ?, ?, ?)";
+        PreparedStatement psInsert = db.connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            String sql = "INSERT INTO USERS(login, password, role, fine) VALUES (?, ?, ?, ?)";
-            PreparedStatement psInsert = db.connection.prepareStatement(sql);
+        psInsert.setString(1, login.toUpperCase());
+        psInsert.setString(2, password);
+        psInsert.setInt(3, roleInt);
+        psInsert.setDouble(4, 0.0);
 
-            psInsert.setString(1, login.toUpperCase());
-            psInsert.setString(2, password);
-            psInsert.setInt(3, roleInt);
-            psInsert.setDouble(4, 0.0);
-            psInsert.executeUpdate();
-            psInsert.close();
+        psInsert.executeUpdate();
+        ResultSet rs = psInsert.getGeneratedKeys();
 
-            System.out.println("Inserted: " + login + ", " + password);
-        } catch (SQLException e) {
-            Database.printSQLException(e);
+        if (rs.next()) {
+            id = rs.getInt(1);
         }
+
+        rs.close();
+        psInsert.close();
+
+        System.out.println("Inserted: " + login);
+
+        if (role == core.enums.Roles.ADMINISTRATOR) {
+            return new Administrator(id, login, password);
+        }
+
+        if (role == core.enums.Roles.LIBRARIAN) {
+            return new Librarian(id, login, password);
+        }
+
+        if (role == core.enums.Roles.STUDENT) {
+            return new Student(id, login, password, 0.0, false);
+        }
+
+        throw new Error("Incorrect role.");
     }
 
-    public void deleteUser(int id) {
+    public void deleteUser(UsersPrimaryKeys key, String value) throws SQLException {
         Database db = Database.getInstance();
 
-        try {
-            String sql = "DELETE FROM Users WHERE id = " + id;
-            Statement st = db.connection.createStatement();
-
-            int number = st.executeUpdate(sql);
-
-            System.out.println("Number of deleted rows: " + number);
-        } catch (SQLException e) {
-            Database.printSQLException(e);
+        String primaryKey;
+        if (key == UsersPrimaryKeys.ID) {
+            primaryKey = "ID";
+        } else if (key == UsersPrimaryKeys.LOGIN) {
+            primaryKey = "LOGIN";
+        } else {
+            throw new Error("Wrong key!");
         }
+
+        String query = "DELETE FROM USERS WHERE " + primaryKey + " = ?";
+        PreparedStatement pst = db.connection.prepareStatement(query);
+
+        pst.setString(1, value);
+        ResultSet rs = pst.executeQuery();
+
+        rs.close();
+        pst.close();
+        System.out.println("User with " + primaryKey + " " + value + " deleted");
     }
 
-    public void deleteUser(String login) {
+    public User[] fetchUsers(core.enums.Roles role) throws SQLException {
         Database db = Database.getInstance();
+        int roleInt = this.getRoleInt(role);
 
-        try {
-            String sql = "DELETE FROM Users WHERE login = ?";
-            PreparedStatement pst = db.connection.prepareStatement(sql);
+        Statement st = db.connection.createStatement();
+        ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM Users");
 
-            pst.setString(1, login.toUpperCase());
-            int number = pst.executeUpdate();
+        rs.next();
+        int count = rs.getInt(1);
+        int i = 0;
+        rs.close();
 
-            System.out.println("Number of deleted rows: " + number);
-        } catch (SQLException e) {
-            Database.printSQLException(e);
-        }
-    }
+        User[] users = new User[count];
+        String sql = "SELECT * FROM Users WHERE ROLE = ?";
+        PreparedStatement pst = db.connection.prepareStatement(sql);
 
-    public void fetchUsers(core.enums.Roles role) {
-        Database db = Database.getInstance();
-        User[] users;
+        pst.setInt(1, roleInt);
+        ResultSet rsUsers = pst.executeQuery();
 
-        try {
-            int roleInt = this.getRoleInt(role);
+        if (rsUsers.next()) {
+            int id = rsUsers.getInt("id");
+            double fine = rsUsers.getDouble("fine");
+            String login = rsUsers.getString("login");
+            String password = rsUsers.getString("password");
+            boolean isBlocked = rsUsers.getBoolean("isBlocked");
 
-            Statement st = db.connection.createStatement();
-            ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM Users");
-
-            rs.next();
-            int count = rs.getInt(1);
-            int i = 0;
-            rs.close();
-
-            users = new User[count];
-
-            String sql = "SELECT * FROM Users WHERE ROLE = ?";
-            PreparedStatement pst = db.connection.prepareStatement(sql);
-
-            pst.setInt(1, roleInt);
-            ResultSet rsUsers = pst.executeQuery();
-
-            if (rsUsers.next()) {
-                String login = rsUsers.getString("login");
-                String password = rsUsers.getString("password");
-
-                switch (this.getRoleEnum(roleInt)) {
-                    case ADMINISTRATOR: {
-                        users[i] = new Administrator();
-                        break;
-                    }
-
-                    case LIBRARIAN: {
-                        users[i] = new Librarian();
-                        break;
-                    }
-
-                    case STUDENT: {
-                        users[i] = new Student(login, password);
-                        break;
-                    }
+            switch (this.getRoleEnum(roleInt)) {
+                case ADMINISTRATOR: {
+                    users[i] = new Administrator(id, login, password);
+                    break;
                 }
 
-                i++;
+                case LIBRARIAN: {
+                    users[i] = new Librarian(id, login, password);
+                    break;
+                }
+
+                case STUDENT: {
+                    users[i] = new Student(id, login, password, fine, isBlocked);
+                    break;
+                }
             }
 
-            System.out.println(users[0].toString());
-
-            rsUsers.close();
-            pst.close();
-        } catch (SQLException e) {
-            Database.printSQLException(e);
+            i++;
         }
+
+        System.out.println(users[0].toString());
+
+        rsUsers.close();
+        pst.close();
+
+        return users;
     }
 
-    public void printUsers() {
+    public User fetchUser(int id) throws SQLException {
         Database db = Database.getInstance();
 
-        try {
-            Statement st = db.connection.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM Users");
+        String sql = "SELECT * FROM Users WHERE ID = ?";
+        PreparedStatement pst = db.connection.prepareStatement(sql);
 
-            if (rs.next()) {
-                String login = rs.getString("login");
-                String password = rs.getString("password");
+        pst.setInt(1, id);
+        ResultSet rsUsers = pst.executeQuery();
 
-                System.out.println("login: " + login);
-                System.out.println("password: " + password);
+        rsUsers.next();
+
+        int role = rsUsers.getInt("role");
+        double fine = rsUsers.getDouble("fine");
+        String login = rsUsers.getString("login");
+        String password = rsUsers.getString("password");
+        boolean isBlocked = rsUsers.getBoolean("isBlocked");
+
+        rsUsers.close();
+        pst.close();
+
+        switch (this.getRoleEnum(role)) {
+            case ADMINISTRATOR: {
+                return new Administrator(id, login, password);
             }
 
-            rs.close();
-            st.close();
-        } catch (SQLException e) {
-            Database.printSQLException(e);
+            case LIBRARIAN: {
+                return new Librarian(id, login, password);
+            }
+
+            case STUDENT: {
+                return new Student(id, login, password, fine, isBlocked);
+            }
         }
+
+        throw new Error("Incorrect id.");
+    }
+
+    public User fetchUser(String login) throws SQLException {
+        Database db = Database.getInstance();
+
+        String sql = "SELECT * FROM Users WHERE LOGIN = ?";
+        PreparedStatement pst = db.connection.prepareStatement(sql);
+
+        pst.setString(1, login);
+        ResultSet rsUsers = pst.executeQuery();
+
+        rsUsers.next();
+
+        int id = rsUsers.getInt("id");
+        int role = rsUsers.getInt("role");
+        double fine = rsUsers.getDouble("fine");
+        String password = rsUsers.getString("password");
+        boolean isBlocked = rsUsers.getBoolean("isBlocked");
+
+        rsUsers.close();
+        pst.close();
+
+        switch (this.getRoleEnum(role)) {
+            case ADMINISTRATOR: {
+                return new Administrator(id, login, password);
+            }
+
+            case LIBRARIAN: {
+                return new Librarian(id, login, password);
+            }
+
+            case STUDENT: {
+                return new Student(id, login, password, fine, isBlocked);
+            }
+        }
+
+        throw new Error("Incorrect login.");
     }
 }

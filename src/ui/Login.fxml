@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #32323D;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.Controller">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="466.0" layoutY="188.0" prefHeight="68.0" prefWidth="258.0" text="Register" textFill="#03a3a3">
+         <font>
+            <Font name="Montserrat Bold" size="35.0" />
+         </font>
+      </Label>
+      <TextField layoutX="400.0" layoutY="293.0" prefHeight="50.0" prefWidth="400.0" promptText="Login" style="-fx-background-radius: 8; -fx-background-color: #ffffff; -fx-text-fill: #8688#C0C0C088;">
+         <font>
+            <Font name="Montserrat Light" size="15.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="400.0" layoutY="377.0" prefHeight="50.0" prefWidth="400.0" promptText="Password" style="-fx-background-radius: 8; -fx-background-color: #ffffff; -fx-text-fill: #8688#C0C0C088;">
+         <font>
+            <Font name="Montserrat Light" size="15.0" />
+         </font>
+      </TextField>
+      <Button layoutX="400.0" layoutY="461.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="400.0" style="-fx-background-radius: 8; -fx-background-color: #03A5A5;" text="Continue" textFill="WHITE">
+         <font>
+            <Font name="Montserrat Light" size="22.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

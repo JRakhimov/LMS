@@ -1,13 +1,24 @@
 package core.models;
 
+import core.db.Books.Books;
+import core.db.Books.BooksFetchBy;
+import core.db.BorrowedBooks;
+import core.db.Database;
+import core.db.ReservedBooks;
 import core.enums.Course;
 import core.enums.Department;
 import core.enums.Roles;
+import org.apache.derby.client.am.SqlException;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
 public class Student extends User {
+    private Books booksDB = new Books();
+    private BorrowedBooks borrowedBooksDB = new BorrowedBooks();
+    private ReservedBooks reservedBooksDB = new ReservedBooks();
+
     private Course course;
     private Department department;
 
@@ -30,6 +41,13 @@ public class Student extends User {
         }
 
         this.course = Student.getCourse(login);
+
+        try {
+            this.books = borrowedBooksDB.fetchBorrowedBooksByStudent(id);
+            this.reservedBooks = reservedBooksDB.fetchReservedBooksByStudent(id);
+        } catch (SQLException e) {
+            Database.printSQLException(e);
+        }
     }
 
     public static Course getCourse(String login) {
@@ -53,6 +71,14 @@ public class Student extends User {
         }
 
         return Course.NOT_FOUND;
+    }
+
+    public Book[] fetchBooks(BooksFetchBy key, String value) throws SQLException {
+        return this.booksDB.fetchBooks(key, value);
+    }
+
+    public Book[] fetchBooks(BooksFetchBy key, int value) throws SQLException {
+        return this.booksDB.fetchBooks(key, value);
     }
 
     @Override

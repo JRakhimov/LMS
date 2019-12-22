@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 
 public class Controller implements Initializable{
     @FXML
-    private Button login, addBookBtn,plusBookBtn;
+    private Button login, addBookBtn,plusBookBtn,backBtn,Admin_logout_btn, nologout, yeslogout;
     @FXML
     private VBox pnItems;
 
@@ -42,14 +42,48 @@ public class Controller implements Initializable{
     public void addBooks(ActionEvent event)throws Exception{
         Stage stage;
         Parent root;
-       // if(event.getSource()== plusBookBtn){
             stage = (Stage) plusBookBtn.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("addBook.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-       // }
     }
+    public void goBack(ActionEvent event)throws Exception{
+        Stage stage;
+        Parent root;
+        stage = (Stage) backBtn.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("AdminPage_students.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void logout (ActionEvent event)throws Exception{
+        Stage stage;
+        Parent root;
+        stage = (Stage) Admin_logout_btn.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("logout.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void No (ActionEvent event)throws Exception{
+        Stage stage;
+        Parent root;
+        stage = (Stage) nologout.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("AdminPage_students.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void Yes (ActionEvent event)throws Exception{
+        Parent root;
+        Stage stage = (Stage) yeslogout.getScene().getWindow();
+        stage.close();
+    }
+
+
 
 
     public void handleStudentsList (ActionEvent event) throws Exception {

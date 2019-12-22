@@ -145,7 +145,7 @@
                   <Insets bottom="5.0" left="-10.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Log out" textFill="#03a5a5">
+            <Button fx:id="Admin_logout_btn" onAction ="#logout" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Log out" textFill="#03a5a5">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>

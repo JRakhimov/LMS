@@ -42,20 +42,22 @@ public class Controller implements Initializable {
 
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
-        iCircle.setStroke(Color.BLACK);
-        Image im = new Image("ui/views/images/photo_2019-11-23_18-47-23.jpg" ,false);
-        iCircle.setFill(new ImagePattern(im));
-
-        Node [] nodes = new Node[15];
-        for(int i = 0; i < nodes.length; i++){
-            try {
-                nodes[i] = FXMLLoader.load(getClass().getResource("../views/Item.fxml"));
-                pnItems.getChildren().add(nodes[i]);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println(url);
+        System.out.println(resourceBundle);
+//        iCircle.setStroke(Color.BLACK);
+//        Image im = new Image("ui/views/images/photo_2019-11-23_18-47-23.jpg" ,false);
+//        iCircle.setFill(new ImagePattern(im));
+//
+//        Node [] nodes = new Node[15];
+//        for(int i = 0; i < nodes.length; i++){
+//            try {
+//                nodes[i] = FXMLLoader.load(getClass().getResource("../views/Item.fxml"));
+//                pnItems.getChildren().add(nodes[i]);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//        }
     }
 }

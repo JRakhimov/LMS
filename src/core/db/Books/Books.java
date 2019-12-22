@@ -3,10 +3,7 @@ package core.db.Books;
 import core.db.Database;
 import core.models.Book;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Books {
     public static void initBooksTable() {
@@ -37,7 +34,7 @@ public class Books {
         }
     }
 
-    public Book createBook(int isbn, String title, String author, int publishDate, int subject) throws SQLException {
+    public Book createBook(int isbn, String title, String author, Timestamp publishDate, int subject) throws SQLException {
         Database db = Database.getInstance();
         int id = -1;
 
@@ -46,13 +43,13 @@ public class Books {
         psInsert.setInt(1, isbn);
         psInsert.setString(2, title);
         psInsert.setString(3, author);
-        psInsert.setInt(4, publishDate);
+        psInsert.setTimestamp(4, publishDate);
         psInsert.setInt(5, subject);
 
         psInsert.executeUpdate();
         ResultSet rs = psInsert.getGeneratedKeys();
 
-        if (rs.next()) {
+        while (rs.next()) {
             id = rs.getInt(1);
         }
 
@@ -120,13 +117,13 @@ public class Books {
         pst.setString(1, value);
         ResultSet rsBooks = pst.executeQuery();
 
-        if (rsBooks.next()) {
+        while (rsBooks.next()) {
             int id = rsBooks.getInt("id");
             int isbn = rsBooks.getInt("isbn");
             int subject = rsBooks.getInt("subject");
             String title = rsBooks.getString("title");
             String author = rsBooks.getString("author");
-            int publishDate = rsBooks.getInt("publishDate");
+            Timestamp publishDate = rsBooks.getTimestamp("publishDate");
 
             books[i] = new Book(id, isbn, title, author, subject, publishDate);
 
@@ -168,13 +165,13 @@ public class Books {
         pst.setInt(1, value);
         ResultSet rsBooks = pst.executeQuery();
 
-        if (rsBooks.next()) {
+        while (rsBooks.next()) {
             int id = rsBooks.getInt("id");
             int isbn = rsBooks.getInt("isbn");
             int subject = rsBooks.getInt("subject");
             String title = rsBooks.getString("title");
             String author = rsBooks.getString("author");
-            int publishDate = rsBooks.getInt("publishDate");
+            Timestamp publishDate = rsBooks.getTimestamp("publishDate");
 
             books[i] = new Book(id, isbn, title, author, subject, publishDate);
 
@@ -209,7 +206,7 @@ public class Books {
         int subject = rsBooks.getInt("subject");
         String title = rsBooks.getString("title");
         String author = rsBooks.getString("author");
-        int publishDate = rsBooks.getInt("publishDate");
+        Timestamp publishDate = rsBooks.getTimestamp("publishDate");
 
         return new Book(id, isbn, title, author, subject, publishDate);
     }
@@ -243,7 +240,7 @@ public class Books {
         int subject = rsBooks.getInt("subject");
         String title = rsBooks.getString("title");
         String author = rsBooks.getString("author");
-        int publishDate = rsBooks.getInt("publishDate");
+        Timestamp publishDate = rsBooks.getTimestamp("publishDate");
 
         return new Book(id, isbn, title, author, subject, publishDate);
     }

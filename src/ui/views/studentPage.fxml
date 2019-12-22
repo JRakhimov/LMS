@@ -65,7 +65,7 @@
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@views/icons/baseline_menu_book_white_18dp.png" />
+                                <Image url="@icons/baseline_menu_book_white_18dp.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -80,7 +80,7 @@
                     <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@views/icons/baseline_history_white_18dp.png" />
+                                <Image url="@icons/baseline_history_white_18dp.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -98,7 +98,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@views/icons/baseline_history_white_18dp.png" />
+                        <Image url="@icons/baseline_history_white_18dp.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -135,7 +135,7 @@
                             <graphic>
                                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@views/icons/baseline_filter_list_white_18dp.png" />
+                                        <Image url="@icons/baseline_filter_list_white_18dp.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -148,7 +148,7 @@
                             <graphic>
                                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@views/icons/baseline_search_white_18dp.png" />
+                                        <Image url="@icons/baseline_search_white_18dp.png" />
                                     </image>
                                 </ImageView>
                             </graphic>

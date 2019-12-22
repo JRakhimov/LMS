@@ -162,7 +162,7 @@ public class Users {
         pst.setInt(1, roleInt);
         ResultSet rsUsers = pst.executeQuery();
 
-        if (rsUsers.next()) {
+        while (rsUsers.next()) {
             int id = rsUsers.getInt("id");
             double fine = rsUsers.getDouble("fine");
             String login = rsUsers.getString("login");

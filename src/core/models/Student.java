@@ -18,12 +18,12 @@ public class Student extends User {
     private boolean isBlocked = false;
     private Roles role = Roles.STUDENT;
 
-    public Student(String login, String password) {
-        this.login = login;
-        this.password = password;
+    public Student(int id, String login, String password, double fine, Boolean isBlocked) {
+        super(id, login, password);
+        this.isBlocked = isBlocked;
 
         // 0 if they are equal
-        if (Character.compare(login.charAt(5), '1') == 0) {
+        if (login.charAt(5) == '1') {
             this.department = Department.SOL;
         } else {
             this.department = Department.SOCIE;
@@ -53,5 +53,10 @@ public class Student extends User {
         }
 
         return Course.NOT_FOUND;
+    }
+
+    @Override
+    public String toString() {
+        return "Login: " + this.login + "\nRole: " + this.role;
     }
 }

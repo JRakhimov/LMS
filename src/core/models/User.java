@@ -1,9 +1,16 @@
 package core.models;
 
-import core.enums.Roles;
-
 public class User {
-    protected String password;
+    protected int id;
     protected String login;
-    public Roles role;
+    protected String password;
+
+    public User(int id, String login, String password) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+    }
+
+    @Override
+    public String toString() { return "Login: " + this.login; }
 }

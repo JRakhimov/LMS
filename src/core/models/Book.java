@@ -1,17 +1,21 @@
 package core.models;
 
-public class Book {
-    private int ISBN;
-    private int title;
-    private String author;
-    private String subject;
-    private int publishDate;
+import java.sql.Timestamp;
 
-    private int expiresAt;
+public class Book {
+    private int id;
+    private int ISBN;
+    private String title;
+    private String author;
+    private int subject;
+    private Timestamp publishDate;
+
+    private Timestamp expiresAt;
     private Student borrower;
     private Student reservedBy;
 
-    Book(int isbn, int title, String author, String subject, int publishDate, int expiresAt) {
+    public Book(int id, int isbn, String title, String author, int subject, Timestamp publishDate, Timestamp expiresAt) {
+        this.id = id;
         this.ISBN = isbn;
         this.title = title;
         this.author = author;
@@ -21,11 +25,14 @@ public class Book {
         this.expiresAt = expiresAt;
     }
 
-    Book(int isbn, int title, String author, String subject, int publishDate) {
+    public Book(int id, int isbn, String title, String author, int subject, Timestamp publishDate) {
         this.ISBN = isbn;
         this.title = title;
         this.author = author;
         this.subject = subject;
         this.publishDate = publishDate;
     }
+
+    @Override
+    public String toString() { return "Title: " + this.title; }
 }

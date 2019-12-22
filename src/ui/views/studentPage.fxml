@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1600.0" style="-fx-background-color: #171C28 #1#32323D71C28;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.Controller">
+    <children>
+        <VBox prefHeight="1000.0" prefWidth="400.0" style="-fx-background-color: #262730;">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="106.0" />
+                    </VBox.margin>
+               <children>
+                  <Circle fx:id="myCircle" centerX="170.0" fill="DODGERBLUE" radius="64.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+                </HBox>
+                <TextField fx:id="studentName" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" scaleY="0.7" style="-fx-background-color: #262730; -fx-text-fill: #ffffff;">
+                    <VBox.margin>
+                        <Insets left="115.0" right="115.0" top="25.0" />
+                    </VBox.margin>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+               <font>
+                  <Font size="16.0" />
+               </font>
+                </TextField>
+                <TextField fx:id="studentId" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" scaleY="0.7" style="-fx-background-color: #262730; -fx-text-fill: #ffffff;">
+                    <VBox.margin>
+                        <Insets left="115.0" right="115.0" />
+                    </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+                </TextField>
+                <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #262730;" text="Borrowed Books" textFill="#03a5a5">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets bottom="30.0" left="109.0" top="60.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@icons/baseline_menu_book_white_18dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+               <font>
+                  <Font size="25.0" />
+               </font>
+                </Button>
+                <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #262730;" text="History" textFill="#03a5a5">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@icons/baseline_history_white_18dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <VBox.margin>
+                        <Insets bottom="30.0" left="109.0" />
+                    </VBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+                </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="25.0" layoutX="60.0" layoutY="426.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #262730;" text="Log out" textFill="#03a5a5">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/baseline_history_white_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="109.0" />
+               </VBox.margin>
+            </Button>
+            </children>
+        </VBox>
+        <HBox alignment="CENTER_RIGHT" layoutX="480.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1150.0" spacing="30.0" style="-fx-background-color: #171C28 #1#32323D71C28;" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="24.59999999999991">
+            <children>
+                <VBox alignment="CENTER" layoutX="500.0" prefHeight="66.0" prefWidth="86.0">
+                    <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="69.0" prefWidth="69.0" style="-fx-background-color: #ffffff;">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@views/icons/add-24px.svg" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+                </VBox>
+                <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="69.0" prefWidth="69.0" style="-fx-background-color: #ffffff;">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@icons/baseline_filter_list_white_18dp.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" layoutX="356.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="69.0" prefWidth="69.0" style="-fx-background-color: #ffffff;">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@icons/baseline_search_white_18dp.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+      <Label layoutX="656.0" layoutY="309.0" text="Label" wrapText="true" />
+      <TableView fx:id="tableView" layoutX="477.0" layoutY="255.0" prefHeight="606.0" prefWidth="748.0">
+        <columns>
+          <TableColumn fx:id="subjectColumn" prefWidth="251.2000732421875" text="Subject" />
+          <TableColumn fx:id="titleColumn" prefWidth="200.7999267578125" text="Title" />
+            <TableColumn fx:id="publishDateColumn" prefWidth="295.99993896484375" text="Publish Date" />
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>

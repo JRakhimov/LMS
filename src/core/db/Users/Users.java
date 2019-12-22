@@ -1,5 +1,7 @@
-package core.db;
+package core.db.Users;
 
+import core.db.Database;
+import core.db.Roles;
 import core.models.Administrator;
 import core.models.Librarian;
 import core.models.Student;

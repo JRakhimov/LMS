@@ -1,7 +1,7 @@
 package ui;
 
 import core.db.Database;
-import core.db.Users;
+import core.db.Users.Users;
 import core.enums.Roles;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +31,7 @@ public class Main extends Application {
 
 //        udb.createUser("U1810264", "123abc123", core.enums.Roles.STUDENT);
 //        udb.deleteUser("u1810265");
-        udb.fetchUsers(Roles.STUDENT);
+//        udb.fetchUsers(Roles.STUDENT);
 
        launch(args);
     }

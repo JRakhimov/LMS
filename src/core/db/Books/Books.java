@@ -1,5 +1,6 @@
-package core.db;
+package core.db.Books;
 
+import core.db.Database;
 import core.models.Book;
 
 import java.sql.PreparedStatement;
@@ -112,7 +113,8 @@ public class Books {
 
         Book[] books = new Book[count];
 
-        String query = "DELETE FROM BOOKS WHERE " + primaryKey + " = ?";
+        String query = "SELECT * FROM BOOKS WHERE " + primaryKey + " = ?";
+
         PreparedStatement pst = db.connection.prepareStatement(query);
 
         pst.setString(1, value);
@@ -160,7 +162,7 @@ public class Books {
 
         Book[] books = new Book[count];
 
-        String query = "DELETE FROM BOOKS WHERE " + primaryKey + " = ?";
+        String query = "SELECT * FROM BOOKS WHERE " + primaryKey + " = ?";
         PreparedStatement pst = db.connection.prepareStatement(query);
 
         pst.setInt(1, value);
@@ -194,7 +196,7 @@ public class Books {
             throw new Error("Wrong key!");
         }
 
-        String query = "DELETE FROM BOOKS WHERE " + primaryKey + " = ?";
+        String query = "SELECT * FROM BOOKS WHERE " + primaryKey + " = ?";
         PreparedStatement pst = db.connection.prepareStatement(query);
 
         pst.setString(1, value);
@@ -228,7 +230,7 @@ public class Books {
             throw new Error("Wrong key!");
         }
 
-        String query = "DELETE FROM BOOKS WHERE " + primaryKey + " = ?";
+        String query = "SELECT * FROM BOOKS WHERE " + primaryKey + " = ?";
         PreparedStatement pst = db.connection.prepareStatement(query);
 
         pst.setInt(1, value);

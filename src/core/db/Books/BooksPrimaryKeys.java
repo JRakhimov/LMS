@@ -1,4 +1,4 @@
-package core.db;
+package core.db.Books;
 
 public enum BooksPrimaryKeys {
     ID,

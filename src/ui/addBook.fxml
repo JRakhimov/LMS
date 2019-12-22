@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #32323D;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.Controller">
+   <children>
+      <VBox alignment="CENTER" layoutX="-2.0" layoutY="-9.0" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <HBox prefHeight="35.0" prefWidth="1000.0">
+               <children>
+                  <Label text=" Add new book" textFill="#03a5a5">
+                     <font>
+                        <Font name="Montserrat Bold" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="150.0" prefWidth="1000.0" spacing="55.0">
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="82.0" prefWidth="490.0" spacing="12.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Title" textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Medium" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="50.0" prefWidth="459.0" style="-fx-background-radius: 8; -fx-text-fill: #262730;">
+                           <font>
+                              <Font name="Montserrat Medium" size="15.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="490.0" spacing="15.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Author" textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Medium" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="50.0" prefWidth="490.0" style="-fx-background-radius: 8; -fx-text-fill: #262730;">
+                           <font>
+                              <Font name="Montserrat Medium" size="15.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="170.0" prefWidth="1000.0" spacing="55.0">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="150.0" prefWidth="490.0" spacing="12.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Subject" textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Medium" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="50.0" prefWidth="490.0" style="-fx-background-radius: 8; -fx-text-fill: #262730;">
+                           <font>
+                              <Font name="Montserrat Medium" size="15.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="490.0" spacing="15.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Publish Date" textFill="WHITE">
+                           <font>
+                              <Font name="Montserrat Medium" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="50.0" prefWidth="490.0" style="-fx-background-radius: 8; -fx-text-fill: #262730;">
+                           <font>
+                              <Font name="Montserrat Medium" size="15.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox alignment="BOTTOM_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="265.0" spacing="15.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label text="ISBN" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Medium" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextField alignment="BOTTOM_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="265.0" style="-fx-background-radius: 8; -fx-text-fill: #262730;">
+                     <font>
+                        <Font name="Montserrat Medium" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #03a5a5; -fx-background-radius: 8;" text="+ Add" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Medium" size="28.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,4 +1,7 @@
 package ui.controllers;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

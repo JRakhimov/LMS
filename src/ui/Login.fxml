@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #32323D;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.Controller">
+   <children>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label alignment="BASELINE_CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="258.0" text="Register" textAlignment="CENTER" textFill="#03a3a3">
+               <font>
+                  <Font name="Montserrat Bold" size="35.0" />
+               </font>
+            </Label>
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="400.0" promptText="Login" style="-fx-background-radius: 8; -fx-background-color: #ffffff; -fx-text-fill: #262730;">
+               <font>
+                  <Font name="Montserrat Light" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" top="30.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="400.0" promptText="Password" style="-fx-background-radius: 8; -fx-background-color: #ffffff; -fx-text-fill: #CFCFCF;">
+               <font>
+                  <Font name="Montserrat Light" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="15.0" />
+               </VBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="400.0" style="-fx-background-radius: 8; -fx-background-color: #03A5A5;" text="Continue" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat Medium" size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

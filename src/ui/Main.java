@@ -4,22 +4,27 @@ import core.db.Database;
 import core.db.Users.Users;
 import core.enums.Roles;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+
+
 public class Main extends Application {
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("views/AdminPage.fxml"));
-        primaryStage.setScene(new Scene(root,1200,800));
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-
+        Parent root = FXMLLoader.load(getClass().getResource("addBook.fxml"));
+        primaryStage.setTitle("Library System Management");
+        primaryStage.setScene(new Scene(root, 1200, 800));
         primaryStage.show();
     }
+
 
 
     public static void main(String[] args) {

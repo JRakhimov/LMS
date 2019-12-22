@@ -9,26 +9,26 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <HBox alignment="CENTER_LEFT" layoutX="322.0" layoutY="182.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="800.0" style="-fx-background-color: #262730; -fx-background-radius: 10;">
+      <HBox alignment="CENTER_LEFT" layoutX="322.0" layoutY="239.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="845.0" style="-fx-background-color: #262730;">
          <children>
             <Label text="1" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="26.0" />
                </HBox.margin>
             </Label>
             <Label text="Yoko Ono" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="25.0" />
+                  <Insets left="27.0" />
                </HBox.margin>
             </Label>
             <Label text="U1810255" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="110.0" />
+                  <Insets left="118.0" />
                </HBox.margin>
             </Label>
             <Label text="y.ono@mail.inha" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="60.0" />
+                  <Insets left="80.0" />
                </HBox.margin>
             </Label>
             <Label layoutX="322.0" text="2" textFill="WHITE">
@@ -38,7 +38,7 @@
             </Label>
             <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #fff; -fx-background-radius: 8;" text="Edit" textFill="#03a5a5">
                <HBox.margin>
-                  <Insets left="115.0" />
+                  <Insets left="100.0" />
                </HBox.margin>
                <font>
                   <Font name="Montserrat Medium" size="12.0" />
@@ -49,7 +49,7 @@
                   <Font name="Montserrat Medium" size="12.0" />
                </font>
                <HBox.margin>
-                  <Insets left="20.0" />
+                  <Insets left="30.0" />
                </HBox.margin>
             </Button>
          </children>

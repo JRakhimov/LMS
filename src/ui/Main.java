@@ -8,23 +8,13 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Main extends Application {
-    private double x,y;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("views/AdminPage.fxml"));
-        primaryStage.setScene(new Scene(root));
-        primaryStage.initStyle(StageStyle.DECORATED);
+        primaryStage.setScene(new Scene(root,1200,800));
+        primaryStage.initStyle(StageStyle.UNDECORATED);
 
-        root.setOnMousePressed(event -> {
-            x = event.getSceneX();
-            y = event.getSceneY();
-        });
-        root.setOnMouseDragged(event -> {
-            primaryStage.setX(event.getScreenX()-x);
-            primaryStage.setY(event.getSceneY()-y);
-
-        });
         primaryStage.show();
     }
 

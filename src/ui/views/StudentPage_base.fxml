@@ -21,58 +21,22 @@
                         <Insets bottom="20.0" left="110.0" top="100.0" />
                     </VBox.margin>
                 </Circle>
-                <Label alignment="BOTTOM_CENTER" text="Abdullaev Oybek" textFill="#03a5a5">
+                <Label alignment="BOTTOM_CENTER" text="Utegenova Aygerim" textFill="#03a5a5">
                     <font>
                         <Font name="Montserrat Medium" size="18.0" />
                     </font>
                     <VBox.margin>
-                        <Insets bottom="5.0" left="70.0" />
+                        <Insets bottom="5.0" left="60.0" />
                     </VBox.margin>
                 </Label>
-                <Label text="U171088" textFill="#03a5a5">
+                <Label text="U1810280" textFill="#03a5a5">
                     <font>
                         <Font name="Montserrat Medium" size="18.0" />
                     </font>
                     <VBox.margin>
-                        <Insets bottom="40.0" left="115.0" />
+                        <Insets bottom="40.0" left="110.0" />
                     </VBox.margin>
                 </Label>
-                <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Books" textFill="#03a5a5">
-                    <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@icons/baseline_book_white_18dp.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <VBox.margin>
-                        <Insets bottom="5.0" left="-10.0" />
-                    </VBox.margin>
-                    <padding>
-                        <Insets left="65.0" />
-                    </padding>
-                    <font>
-                        <Font name="Montserrat Medium" size="16.0" />
-                    </font>
-                </Button>
-                <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Students" textFill="#03a5a5">
-                    <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@icons/baseline_school_white_18dp.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <VBox.margin>
-                        <Insets bottom="5.0" left="-10.0" />
-                    </VBox.margin>
-                    <padding>
-                        <Insets left="65.0" />
-                    </padding>
-                    <font>
-                        <Font name="Montserrat Medium" size="16.0" />
-                    </font>
-                </Button>
                 <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Borrowed books" textFill="#03a5a5">
                     <graphic>
                         <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
@@ -91,25 +55,7 @@
                         <Insets bottom="5.0" left="-10.0" />
                     </VBox.margin>
                 </Button>
-                <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Overdue books" textFill="#03a5a5">
-                    <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@icons/baseline_access_time_white_18dp.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <padding>
-                        <Insets left="65.0" />
-                    </padding>
-                    <font>
-                        <Font name="Montserrat Medium" size="16.0" />
-                    </font>
-                    <VBox.margin>
-                        <Insets bottom="5.0" left="-10.0" />
-                    </VBox.margin>
-                </Button>
-                <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Report" textFill="#03a5a5">
+                <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="History" textFill="#03a5a5">
                     <graphic>
                         <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -162,20 +108,6 @@
                             </font>
                         </Label>
                         <Label text="books" textFill="WHITE">
-                            <font>
-                                <Font name="Montserrat Medium" size="18.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </VBox>
-                <VBox alignment="CENTER" prefHeight="70.0" prefWidth="128.0" style="-fx-background-color: #03A5A5; -fx-background-radius: 10;">
-                    <children>
-                        <Label text="340" textFill="WHITE">
-                            <font>
-                                <Font name="Montserrat SemiBold" size="23.0" />
-                            </font>
-                        </Label>
-                        <Label text="students" textFill="WHITE">
                             <font>
                                 <Font name="Montserrat Medium" size="18.0" />
                             </font>

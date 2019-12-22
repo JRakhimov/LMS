@@ -32,6 +32,7 @@ public class Controller implements Initializable{
         Parent root;
         if(event.getSource()==login){
             stage = (Stage) login.getScene().getWindow();
+
             root = FXMLLoader.load(getClass().getResource("AdminPage_students.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -86,7 +87,9 @@ public class Controller implements Initializable{
 
 
 
-    public void handleStudentsList (ActionEvent event) throws Exception {
+
+   public void handleStudentsList (ActionEvent event) throws Exception {
+
         Node[] nodes = new Node[15];
         for (int i = 0; i < nodes.length; i++) {
             try {
@@ -112,6 +115,56 @@ public class Controller implements Initializable{
             }
         }
     }
+    public void  handleBooksList (ActionEvent event) throws Exception {
+        Node[] nodes = new Node[15];
+        for (int i = 0; i < nodes.length; i++) {
+            try {
+                nodes[i] = FXMLLoader.load(getClass().getResource("../views/books.fxml"));
+                pnItems.getChildren().add(nodes[i]);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void handleborrowedBooks (ActionEvent event) throws Exception {
+        Node[] nodes = new Node[15];
+        for (int i = 0; i < nodes.length; i++) {
+            try {
+                nodes[i] = FXMLLoader.load(getClass().getResource("../views/books.fxml"));
+                pnItems.getChildren().add(nodes[i]);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void handleOverdueBook (ActionEvent event) throws Exception {
+        Node[] nodes = new Node[15];
+        for (int i = 0; i < nodes.length; i++) {
+            try {
+                nodes[i] = FXMLLoader.load(getClass().getResource("../views/books.fxml"));
+                pnItems.getChildren().add(nodes[i]);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    public void handleReport (ActionEvent event) throws Exception {
+        Node[] nodes = new Node[15];
+        for (int i = 0; i < nodes.length; i++) {
+            try {
+                nodes[i] = FXMLLoader.load(getClass().getResource("../views/books.fxml"));
+                pnItems.getChildren().add(nodes[i]);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
 
 

@@ -37,7 +37,7 @@
                   <Insets bottom="40.0" left="120.0" />
                </VBox.margin>
             </Label>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Books" textFill="#03a5a5">
+            <Button onAction="#handleBooksList" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Books" textFill="#03a5a5">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -91,7 +91,7 @@
                   <Font name="Montserrat Medium" size="16.0" />
                </font>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Borrowed books" textFill="#03a5a5">
+            <Button alignment="BASELINE_LEFT" onAction="#handleborrowedBooks" fx:id="borrowedbooks" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Borrowed books" textFill="#03a5a5">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -109,7 +109,7 @@
                   <Insets bottom="5.0" left="-10.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Overdue books" textFill="#03a5a5">
+            <Button alignment="BASELINE_LEFT"  onAction="#handleOverdueBook" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Overdue books" textFill="#03a5a5">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -127,7 +127,7 @@
                   <Insets bottom="5.0" left="-10.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Report" textFill="#03a5a5">
+            <Button onAction="#handleReport" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../style.css" text="Report" textFill="#03a5a5">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -170,50 +170,7 @@
             <VBox fx:id="pnItems" prefHeight="540.0" prefWidth="841.0" style="-fx-background-color: #32323D;" />
          </content>
       </ScrollPane>
-      <HBox alignment="CENTER_LEFT" layoutX="321.0" layoutY="182.0" prefHeight="46.0" prefWidth="1507.0" style="-fx-background-color: #262730; -fx-background-radius: 10;" AnchorPane.bottomAnchor="572.0" AnchorPane.leftAnchor="321.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="182.0">
-         <children>
-            <Label text="№" textFill="WHITE">
-               <font>
-                  <Font name="Montserrat SemiBold" size="12.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="25.0" />
-               </HBox.margin>
-            </Label>
-            <Label text="Name" textFill="WHITE">
-               <HBox.margin>
-                  <Insets left="25.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Montserrat SemiBold" size="12.0" />
-               </font>
-            </Label>
-            <Label text="ID" textFill="WHITE">
-               <HBox.margin>
-                  <Insets left="130.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Montserrat SemiBold" size="12.0" />
-               </font>
-            </Label>
-            <Label text="Mail" textFill="WHITE">
-               <HBox.margin>
-                  <Insets left="65.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Montserrat SemiBold" size="12.0" />
-               </font>
-            </Label>
-            <Label text="Stage" textFill="WHITE">
-               <HBox.margin>
-                  <Insets left="115.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Montserrat SemiBold" size="12.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
+
       <HBox layoutX="321.0" layoutY="82.0" prefHeight="78.0" prefWidth="1507.0" spacing="30.0" AnchorPane.leftAnchor="321.0" AnchorPane.rightAnchor="-628.0">
          <children>
             <VBox alignment="CENTER" prefHeight="64.0" prefWidth="128.0" style="-fx-background-color: #03A5A5; -fx-background-radius: 10;">

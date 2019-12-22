@@ -15,10 +15,8 @@ import java.sql.SQLException;
 
 public class Main extends Application {
 
-
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         Parent root = FXMLLoader.load(getClass().getResource("views/AdminPage_students.fxml"));
         primaryStage.setTitle("Library System Management");
         primaryStage.setScene(new Scene(root,1200,800));

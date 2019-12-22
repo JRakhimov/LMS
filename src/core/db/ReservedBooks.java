@@ -1,9 +1,8 @@
 package core.db;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import core.models.Book;
+
+import java.sql.*;
 
 public class ReservedBooks {
     public static void initReservedBooksTable() {
@@ -41,6 +40,43 @@ public class ReservedBooks {
         psInsert.executeUpdate();
         psInsert.close();
         System.out.println("Connected: " + student + " <-> " + book + " (RESERVEDBOOKS)");
+    }
+
+    public static Book[] fetchReservedBooksByStudent(int student) throws SQLException {
+        Database db = Database.getInstance();
+
+        Statement st = db.connection.createStatement();
+        ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM BORROWEDBOOKS WHERE STUDENT = " + student);
+
+        rs.next();
+        int count = rs.getInt(1);
+        int i = 0;
+        rs.close();
+
+        Book[] books = new Book[count];
+        String sql = "SELECT * FROM BOOKS WHERE ID in (SELECT BOOK FROM RESERVEDBOOKS WHERE STUDENT = ?)";
+        PreparedStatement pst = db.connection.prepareStatement(sql);
+
+        pst.setInt(1, student);
+        ResultSet studentBooks = pst.executeQuery();
+
+        while (studentBooks.next()) {
+            int id = studentBooks.getInt("id");
+            int isbn = studentBooks.getInt("ISBN");
+            int subject = studentBooks.getInt("subject");
+            String title = studentBooks.getString("title");
+            String author = studentBooks.getString("author");
+            Timestamp publishDate = studentBooks.getTimestamp("publishDate");
+
+            books[i] = new Book(id, isbn, title, author, subject, publishDate);
+
+            i++;
+        }
+
+        studentBooks.close();
+        pst.close();
+
+        return books;
     }
 
     public void deleteReservedBooks(int id) throws SQLException {

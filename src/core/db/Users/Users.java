@@ -80,7 +80,7 @@ public class Users {
         }
     }
 
-    public User createUser(String login, String password, core.enums.Roles role) throws SQLException {
+    public int createUser(String login, String password, core.enums.Roles role) throws SQLException {
         Database db = Database.getInstance();
         int roleInt = this.getRoleInt(role);
         int id = -1;
@@ -105,19 +105,7 @@ public class Users {
 
         System.out.println("Inserted: " + login);
 
-        if (role == core.enums.Roles.ADMINISTRATOR) {
-            return new Administrator(id, login, password);
-        }
-
-        if (role == core.enums.Roles.LIBRARIAN) {
-            return new Librarian(id, login, password);
-        }
-
-        if (role == core.enums.Roles.STUDENT) {
-            return new Student(id, login, password, 0.0, false);
-        }
-
-        throw new Error("Incorrect role.");
+        return id;
     }
 
     public void deleteUser(UsersPrimaryKeys key, String value) throws SQLException {
@@ -135,7 +123,12 @@ public class Users {
         String query = "DELETE FROM USERS WHERE " + primaryKey + " = ?";
         PreparedStatement pst = db.connection.prepareStatement(query);
 
-        pst.setString(1, value);
+        if (key == UsersPrimaryKeys.ID) {
+            pst.setInt(1, Integer.parseInt(value));
+        } else {
+            pst.setString(1, value);
+        }
+
         ResultSet rs = pst.executeQuery();
 
         rs.close();
@@ -143,23 +136,21 @@ public class Users {
         System.out.println("User with " + primaryKey + " " + value + " deleted");
     }
 
-    public User[] fetchUsers(core.enums.Roles role) throws SQLException {
+    public Administrator[] fetchAdmins() throws SQLException {
         Database db = Database.getInstance();
-        int roleInt = this.getRoleInt(role);
 
         Statement st = db.connection.createStatement();
-        ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM Users");
+        ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM Users WHERE ROLE = 0");
 
         rs.next();
         int count = rs.getInt(1);
         int i = 0;
         rs.close();
 
-        User[] users = new User[count];
-        String sql = "SELECT * FROM Users WHERE ROLE = ?";
+        Administrator[] users = new Administrator[count];
+        String sql = "SELECT * FROM Users WHERE ROLE = 0";
         PreparedStatement pst = db.connection.prepareStatement(sql);
 
-        pst.setInt(1, roleInt);
         ResultSet rsUsers = pst.executeQuery();
 
         while (rsUsers.next()) {
@@ -169,22 +160,81 @@ public class Users {
             String password = rsUsers.getString("password");
             boolean isBlocked = rsUsers.getBoolean("isBlocked");
 
-            switch (this.getRoleEnum(roleInt)) {
-                case ADMINISTRATOR: {
-                    users[i] = new Administrator(id, login, password);
-                    break;
-                }
+            users[i] = new Administrator(id, login, password);
 
-                case LIBRARIAN: {
-                    users[i] = new Librarian(id, login, password);
-                    break;
-                }
+            i++;
+        }
 
-                case STUDENT: {
-                    users[i] = new Student(id, login, password, fine, isBlocked);
-                    break;
-                }
-            }
+        System.out.println(users[0].toString());
+
+        rsUsers.close();
+        pst.close();
+
+        return users;
+    }
+
+    public Librarian[] fetchLibrarians() throws SQLException {
+        Database db = Database.getInstance();
+
+        Statement st = db.connection.createStatement();
+        ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM Users WHERE ROLE = 1");
+
+        rs.next();
+        int count = rs.getInt(1);
+        int i = 0;
+        rs.close();
+
+        Librarian[] users = new Librarian[count];
+        String sql = "SELECT * FROM Users WHERE ROLE = 1";
+        PreparedStatement pst = db.connection.prepareStatement(sql);
+
+        ResultSet rsUsers = pst.executeQuery();
+
+        while (rsUsers.next()) {
+            int id = rsUsers.getInt("id");
+            double fine = rsUsers.getDouble("fine");
+            String login = rsUsers.getString("login");
+            String password = rsUsers.getString("password");
+            boolean isBlocked = rsUsers.getBoolean("isBlocked");
+
+            users[i] = new Librarian(id, login, password);
+
+            i++;
+        }
+
+        System.out.println(users[0].toString());
+
+        rsUsers.close();
+        pst.close();
+
+        return users;
+    }
+
+    public Student[] fetchStudents() throws SQLException {
+        Database db = Database.getInstance();
+
+        Statement st = db.connection.createStatement();
+        ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM Users WHERE ROLE = 2");
+
+        rs.next();
+        int count = rs.getInt(1);
+        int i = 0;
+        rs.close();
+
+        Student[] users = new Student[count];
+        String sql = "SELECT * FROM Users WHERE ROLE = 2";
+        PreparedStatement pst = db.connection.prepareStatement(sql);
+
+        ResultSet rsUsers = pst.executeQuery();
+
+        while (rsUsers.next()) {
+            int id = rsUsers.getInt("id");
+            double fine = rsUsers.getDouble("fine");
+            String login = rsUsers.getString("login");
+            String password = rsUsers.getString("password");
+            boolean isBlocked = rsUsers.getBoolean("isBlocked");
+
+            users[i] = new Student(id, login, password, fine, isBlocked);
 
             i++;
         }

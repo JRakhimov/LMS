@@ -30,7 +30,7 @@ public class BorrowedBooks {
         }
     }
 
-    public static void createBorrowedBooks(int student, int book) throws SQLException {
+    public void createBorrowedBooks(int student, int book) throws SQLException {
         Database db = Database.getInstance();
 
         PreparedStatement psInsert = db.connection.prepareStatement("INSERT INTO BORROWEDBOOKS(STUDENT, book) VALUES (?,?)");
@@ -42,7 +42,7 @@ public class BorrowedBooks {
         System.out.println("Connected: " + student + " <-> " + book + " (BORROWEDBOOKS)");
     }
 
-    public static Book[] fetchBorrowedBooksByStudent(int student) throws SQLException {
+    public Book[] fetchBorrowedBooksByStudent(int student) throws SQLException {
         Database db = Database.getInstance();
 
         Statement st = db.connection.createStatement();
@@ -79,7 +79,7 @@ public class BorrowedBooks {
         return books;
     }
 
-    public static void deleteBorrowedBooks(int id) throws SQLException {
+    public void deleteBorrowedBooks(int id) throws SQLException {
         Database db = Database.getInstance();
 
         String query = "DELETE FROM BORROWEDBOOKS WHERE ID = ?";

@@ -25,18 +25,18 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
-
-        try {
-//            BorrowedBooks.createBorrowedBooks(3, 3);
-
-            Book[] books = BorrowedBooks.fetchBorrowedBooksByStudent(3);
-
-            System.out.println(books.length);
-            System.out.println(books[0]);
-        } catch (SQLException e) {
-            Database.printSQLException(e);
-        }
+//        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
+//
+//        try {
+////            BorrowedBooks.createBorrowedBooks(3, 3);
+//
+//            Book[] books = new BorrowedBooks().fetchBorrowedBooksByStudent(3);
+//
+//            System.out.println(books.length);
+//            System.out.println(books[0]);
+//        } catch (SQLException e) {
+//            Database.printSQLException(e);
+//        }
 
        launch(args);
     }

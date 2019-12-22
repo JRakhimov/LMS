@@ -42,7 +42,7 @@ public class AddedBooks {
         System.out.println("Connected: " + user + " <-> " + book + " (ADDEDBOOKS)");
     }
 
-    public static Book[] fetchAddedBooksByUser(int user) throws SQLException {
+    public Book[] fetchAddedBooksByUser(int user) throws SQLException {
         Database db = Database.getInstance();
 
         Statement st = db.connection.createStatement();

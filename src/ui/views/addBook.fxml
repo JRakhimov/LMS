@@ -109,7 +109,7 @@
                               <Font name="Montserrat Medium" size="28.0" />
                            </font>
                         </Button>
-                        <Button onAction="#handleButtonAction" fx:id="addBookBtn" mnemonicParsing="false"  prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #03a5a5; -fx-background-radius: 8;" text="+ Add" textFill="WHITE">
+                        <Button fx:id="addBookBtn" mnemonicParsing="false"  prefHeight="50.0" prefWidth="240.0" style="-fx-background-color: #03a5a5; -fx-background-radius: 8;" text="+ Add" textFill="WHITE">
                            <font>
                               <Font name="Montserrat Medium" size="28.0" />
                            </font>

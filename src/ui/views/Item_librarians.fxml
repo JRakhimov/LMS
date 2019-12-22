@@ -7,9 +7,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <center>
-        <HBox alignment="CENTER_LEFT" layoutX="322.0" layoutY="239.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="845.0" style="-fx-background-color: #262730;">
+
+        <HBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.views.Controller" alignment="CENTER_LEFT" layoutX="322.0" layoutY="239.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="845.0" style="-fx-background-color: #262730;">
             <children>
                 <Label text="1" textFill="WHITE">
                     <HBox.margin>
@@ -49,5 +48,4 @@
                 </Button>
             </children>
         </HBox>
-    </center>
-</BorderPane>
+

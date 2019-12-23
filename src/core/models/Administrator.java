@@ -5,6 +5,7 @@ import core.db.Books.Books;
 import core.db.Books.BooksFetchBy;
 import core.db.Books.BooksPrimaryKeys;
 import core.db.Database;
+import core.db.Subjects;
 import core.db.Users.Users;
 import core.db.Users.UsersPrimaryKeys;
 import core.enums.Roles;
@@ -22,11 +23,11 @@ public class Administrator extends User {
     public Administrator(int id, String login, String password) {
         super(id, login, password);
 
-        try {
-            this.addedBooks = this.addedBooksDB.fetchAddedBooksByUser(id);
-        } catch (SQLException e) {
-            Database.printSQLException(e);
-        }
+//        try {
+//            this.addedBooks = this.addedBooksDB.fetchAddedBooksByUser(id);
+//        } catch (SQLException e) {
+//            Database.printSQLException(e);
+//        }
     }
 
     public Librarian createLibrarian(String login, String password) throws SQLException {
@@ -53,8 +54,16 @@ public class Administrator extends User {
         this.usersDB.deleteUser(key, value);
     }
 
+    public Book createBook(int isbn, String title, String author, Timestamp publishDate, String subject) throws SQLException {
+        return this.booksDB.createBook(isbn, title, author, publishDate, new Subjects().fetchSubject(subject).id);
+    }
+
     public Book createBook(int isbn, String title, String author, Timestamp publishDate, int subject) throws SQLException {
         return this.booksDB.createBook(isbn, title, author, publishDate, subject);
+    }
+
+    public Book[] fetchBooks() throws SQLException {
+        return this.booksDB.fetchBooks();
     }
 
     public Book[] fetchBooks(BooksFetchBy key, String value) throws SQLException {

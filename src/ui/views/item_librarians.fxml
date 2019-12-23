@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <HBox alignment="CENTER_LEFT" layoutX="322.0" layoutY="239.0" maxHeight="-Infinity" maxWidth="-Infinity"
+              minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="845.0"
+              style="-fx-background-color: #262730;">
+            <children>
+                <Label fx:id="order" text="1" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets left="26.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="name" text="Utegenova Aygerim" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets left="27.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="login" text="U1810255" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets left="80.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="mail" text="a.utegenova@mail.inha" textFill="WHITE">
+                    <HBox.margin>
+                        <Insets left="80.0"/>
+                    </HBox.margin>
+                </Label>
+                <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="66.0"
+                        style="-fx-background-color: #fff; -fx-background-radius: 8;" text="Edit" textFill="#03a5a5">
+                    <HBox.margin>
+                        <Insets left="90.0"/>
+                    </HBox.margin>
+                    <font>
+                        <Font name="Montserrat Medium" size="12.0"/>
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="66.0"
+                        style="-fx-background-color: #EC2E62; -fx-background-radius: 8;" text="Delete" textFill="WHITE">
+                    <font>
+                        <Font name="Montserrat Medium" size="12.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="30.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </center>
+</BorderPane>

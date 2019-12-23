@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns="http://javafx.com/javafx/11.0.1" alignment="CENTER_LEFT"
+      style="-fx-background-color: #262730; -fx-background-radius: 10;">
+    <children>
+        <Label text="№" textFill="WHITE">
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+            <HBox.margin>
+                <Insets left="25.0"/>
+            </HBox.margin>
+        </Label>
+        <Label text="Name" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="25.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label>
+        <Label text="Student ID" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="130.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label>
+        <Label text="Mail" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="65.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label>
+        <Label text="Stage" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="115.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label>
+    </children>
+</HBox>

@@ -46,7 +46,7 @@ public class AddedBooks {
         Database db = Database.getInstance();
 
         Statement st = db.connection.createStatement();
-        ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM ADDEDBOOKS WHERE 'USER' = " + user);
+        ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM ADDEDBOOKS WHERE USER = " + user);
 
         rs.next();
         int count = rs.getInt(1);
@@ -54,7 +54,7 @@ public class AddedBooks {
         rs.close();
 
         Book[] books = new Book[count];
-        String sql = "SELECT * FROM BOOKS WHERE ID in (SELECT BOOK FROM ADDEDBOOKS WHERE 'USER' = ?)";
+        String sql = "SELECT * FROM BOOKS WHERE ID in (SELECT BOOK FROM ADDEDBOOKS WHERE USER = ?)";
         PreparedStatement pst = db.connection.prepareStatement(sql);
 
         pst.setInt(1, user);

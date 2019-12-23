@@ -85,4 +85,12 @@ public class Student extends User {
     public String toString() {
         return "Login: " + this.login + "\nRole: " + this.role;
     }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
 }

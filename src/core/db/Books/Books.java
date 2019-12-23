@@ -81,11 +81,44 @@ public class Books {
         PreparedStatement pst = db.connection.prepareStatement(query);
 
         pst.setString(1, value);
-        ResultSet rs = pst.executeQuery();
+        int rs = pst.executeUpdate();
 
-        rs.close();
         pst.close();
         System.out.println("Book with " + primaryKey + " " + value + " deleted");
+    }
+
+    public Book[] fetchBooks() throws SQLException {
+        Database db = Database.getInstance();
+
+        Statement st = db.connection.createStatement();
+        ResultSet rs = st.executeQuery("SELECT COUNT(*) AS rowsCount FROM BOOKS");
+
+        rs.next();
+        int count = rs.getInt(1);
+        int i = 0;
+        rs.close();
+
+        Book[] books = new Book[count];
+
+        String query = "SELECT * FROM BOOKS ";
+
+        PreparedStatement pst = db.connection.prepareStatement(query);
+        ResultSet rsBooks = pst.executeQuery();
+
+        while (rsBooks.next()) {
+            int id = rsBooks.getInt("id");
+            int isbn = rsBooks.getInt("isbn");
+            int subject = rsBooks.getInt("subject");
+            String title = rsBooks.getString("title");
+            String author = rsBooks.getString("author");
+            Timestamp publishDate = rsBooks.getTimestamp("publishDate");
+
+            books[i] = new Book(id, isbn, title, author, subject, publishDate);
+
+            i++;
+        }
+
+        return books;
     }
 
     public Book[] fetchBooks(BooksFetchBy key, String value) throws SQLException {

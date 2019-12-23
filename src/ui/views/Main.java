@@ -18,7 +18,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
-     //  Parent root = FXMLLoader.load(getClass().getResource("AdminPage_students.fxml"));
+     //  Parent root = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
         primaryStage.setTitle("Library System Management");
         primaryStage.setScene(new Scene(root,1200,800));
 //        primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -27,7 +27,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-//        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
+        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
 //
 //        try {
 //            BorrowedBooks.createBorrowedBooks(3, 3);

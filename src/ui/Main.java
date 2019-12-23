@@ -25,7 +25,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-//        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
+        Database.init("jdbc:derby://localhost:3303/LMS", "root", "root");
 //
 //        try {
 ////            BorrowedBooks.createBorrowedBooks(3, 3);

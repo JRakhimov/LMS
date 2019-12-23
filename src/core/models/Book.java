@@ -1,5 +1,7 @@
 package core.models;
 
+import core.db.Subjects;
+
 import java.sql.Timestamp;
 
 public class Book {
@@ -7,7 +9,7 @@ public class Book {
     private int ISBN;
     private String title;
     private String author;
-    private int subject;
+    private String subject;
     private Timestamp publishDate;
 
     private Timestamp expiresAt;
@@ -19,7 +21,7 @@ public class Book {
         this.ISBN = isbn;
         this.title = title;
         this.author = author;
-        this.subject = subject;
+        this.subject = new Subjects().fetchSubject(subject).title;
         this.publishDate = publishDate;
 
         this.expiresAt = expiresAt;
@@ -29,10 +31,46 @@ public class Book {
         this.ISBN = isbn;
         this.title = title;
         this.author = author;
-        this.subject = subject;
+        this.subject = new Subjects().fetchSubject(subject).title;
         this.publishDate = publishDate;
     }
 
     @Override
     public String toString() { return "Title: " + this.title; }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getISBN() {
+        return ISBN;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public Timestamp getPublishDate() {
+        return publishDate;
+    }
+
+    public Timestamp getExpiresAt() {
+        return expiresAt;
+    }
+
+    public Student getBorrower() {
+        return borrower;
+    }
+
+    public Student getReservedBy() {
+        return reservedBy;
+    }
 }

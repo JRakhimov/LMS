@@ -14,4 +14,16 @@ public class User {
 
     @Override
     public String toString() { return "Login: " + this.login; }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

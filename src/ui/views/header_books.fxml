@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns="http://javafx.com/javafx/11.0.1" alignment="CENTER_LEFT"
+      style="-fx-background-color: #262730; -fx-background-radius: 10;">
+    <children>
+        <Label text="№" textFill="WHITE">
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+            <HBox.margin>
+                <Insets left="25.0"/>
+            </HBox.margin>
+        </Label>
+        <Label text="Subject" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="25.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label>
+        <Label text="Name" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="140.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label>
+        <Label text="Author" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="130.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label>
+        <Label text="ISBN" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="130.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label>
+        <Label text="Publish Date" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="130.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label>
+        <Label text="Expiry Date" textFill="WHITE">
+            <HBox.margin>
+                <Insets left="130.0"/>
+            </HBox.margin>
+            <font>
+                <Font name="Montserrat SemiBold" size="12.0"/>
+            </font>
+        </Label><!--done y-->
+    </children>
+</HBox>

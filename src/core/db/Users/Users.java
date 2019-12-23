@@ -284,13 +284,14 @@ public class Users {
         throw new Error("Incorrect id.");
     }
 
-    public User fetchUser(String login) throws SQLException {
+    public Object fetchUser(String login, String password) throws SQLException {
         Database db = Database.getInstance();
 
-        String sql = "SELECT * FROM Users WHERE LOGIN = ?";
+        String sql = "SELECT * FROM Users WHERE LOGIN = ? AND PASSWORD = ?";
         PreparedStatement pst = db.connection.prepareStatement(sql);
 
         pst.setString(1, login);
+        pst.setString(2, password);
         ResultSet rsUsers = pst.executeQuery();
 
         rsUsers.next();
@@ -298,7 +299,6 @@ public class Users {
         int id = rsUsers.getInt("id");
         int role = rsUsers.getInt("role");
         double fine = rsUsers.getDouble("fine");
-        String password = rsUsers.getString("password");
         boolean isBlocked = rsUsers.getBoolean("isBlocked");
 
         rsUsers.close();

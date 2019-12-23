@@ -95,4 +95,48 @@ public class Subjects {
 
         return subjects;
     }
+
+    public Subject fetchSubject(int id) {
+        try {
+            Database db = Database.getInstance();
+
+            String query = "SELECT * FROM SUBJECTS WHERE ID = ?";
+            PreparedStatement pst = db.connection.prepareStatement(query);
+            pst.setInt(1, id);
+            ResultSet rsSubjects = pst.executeQuery();
+
+            rsSubjects.next();
+
+            String title = rsSubjects.getString("title");
+
+            rsSubjects.close();
+
+            return new Subject(id, title);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return  null;
+    }
+
+    public Subject fetchSubject(String title) {
+        try {
+            Database db = Database.getInstance();
+
+            String query = "SELECT * FROM SUBJECTS WHERE TITLE = ?";
+            PreparedStatement pst = db.connection.prepareStatement(query);
+            pst.setString(1, title);
+            ResultSet rsSubjects = pst.executeQuery();
+
+            rsSubjects.next();
+
+            int id = rsSubjects.getInt("id");
+
+            rsSubjects.close();
+
+            return new Subject(id, title);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return  null;
+    }
 }
